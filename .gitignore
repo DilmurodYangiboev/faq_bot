@@ -1,6 +1,6 @@
 # Environment variables
 .env
-
+faq_bot
 # Go build artifacts
 *.exe
 *.exe~
