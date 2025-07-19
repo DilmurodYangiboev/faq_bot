@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   faq-bot:
     build:
@@ -14,16 +12,8 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "pgrep", "faq_bot"]
+      test: ["CMD", "pidof", "faq_bot"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    deploy:
-      resources:
-        limits:
-          memory: 128M
-          cpus: '0.5'
-        reservations:
-          memory: 64M
-          cpus: '0.25'
